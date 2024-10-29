@@ -149,3 +149,195 @@ Material 명령은 물체의 색상이나 재질 등의 속성을 지정하는 �
 객체지향적인 C++ 라이브러리 함수 호출로 구성된 OpenInventer는 실제로 다시 **이보다 저수준 API인 OpenGL 함수를 다시 호출하여 실행**된다.
 
 OpenInventer에서 사용된 **장면 그래프 개념은 VRML과 Java3D 등에 그대로 적용**된다.
+
+</br>
+</br>
+
+### 4.2.3 VRML
+
+</br>
+
+**VRML**(Virtual Reality Modeling Language)은 원래 인터넷을 염두에 두고 설계된 고수준 API다.
+
+즉, **3차원 장면을 묘사하는 명령어를 인터넷을 통해 주고받기 위한 용도**다. 이는 **HTML**이 주로 텍스트와 2D 그래픽을 위한 언어라는 점과 대조된다.
+
+VRML은 엄밀히 **프로그래밍 언어가 아닌 API**다. 경우에 따라서 함수도 프로그래밍 언어의 일종이 될 수도 있다.
+
+</br>
+
+VRML의 특징은 **인터넷을 통한 사용자 간의 상호작용**에 있다.
+
+예를 들어 장면 내부의 어떤 물체를 클릭하면 그 행위가 인터넷을 통해 다른 곳으로 전파되어 상호작용을 일으킬 수 있다.
+
+VRML은 이러한 기능을 구현하기 위해 **Java나 Javascript 등과 함께 사용**되기도 한다.
+
+그러나 VRML의 가장 중요한 작업인 **렌더링은 실제로 OpenGL 함수의 호출에 의해 이루어진다**.
+
+</br>
+
+VRML은 원격 사용자 사이의 상호작용에 따라 화면에 나타나는 장면을 변화시킴으로써 현실감을 증폭시킨다.
+
+물론 현재로서는 네트워크 사용자가 헤드마운트 디스플레이나 데이터 장갑 등 전문적인 VR 장비를 갖추기는 쉽지 않다.
+
+</br>
+
+3D Studio Max로 작성한 물체나 애니메이션을 VRML 소스로 자동 변환할 수도 있다.
+
+이는 MMD로 작성한 2D 애니메이션을 Shockwave 유틸리티를 이용해 HTML로 변환하는 것과 같다.
+
+복잡한 물체나 애니메이션은 VRML로 코딩하는 것보다 3D Studio Max와 같은 3D 모델링 소프트웨어를 사용하는 것이 유리하다.
+
+</br>
+
+```
+#VRML V2.0 utf8                             # 파일이 VRML 텍스트고, Version 2.0 문법으로 작성
+# A Cylinder                                # 주석으로 # 기호로 사용   
+Shape                                       # 노드의 이름
+{
+    appearance Appearance                   # appearance: 물체 특성 명시
+    {
+        material Material       { }         # 물체의 색상 명시 가능(기본 색상: 회색)
+        texture ImageTexture    { }         # 원기둥 표면에 입힐 텍스처 명시 가능
+    }
+    geometry Cylinder                       # geometry: 물체 종류 명시
+    {
+        height      2.0                     # 높이 명시
+        radius      1.5                     # 반지름 명시
+    }
+}
+```
+</br>
+
+**VRML 파일은 크게 헤더, 주석, 노드, 필드, 필드 값 등으로 구성**된다.
+
+노드 정의는 다음과 같은 문법을 사용한다.
+
+</br>
+
+```
+Node_Name
+{
+    field_name1 field_value1
+    field_name2 field_value2
+}
+```
+</br>
+
+하나의 **필드 값을 중괄호를 사용하여 다시 여러 개의 서브 필드로 나누어 명시할 수 있다**.
+
+</br>
+
+```#VRML V2.0 utf8
+Shape                                                       # 1
+{
+    appearance Appearance
+    {
+        material Material       { }
+    }
+    geometry Sphere
+    {
+        radius                  1.2
+    }
+}
+
+Shape                                                       # 2
+{
+    appearance Appearance
+    {
+        material Material       { }
+    }
+    geometry Cylinder
+    {
+        radius                  0.3
+        height                  5.0
+        top                     FALSE
+    }
+}
+
+Transform                                                   # 3
+{
+    translation                 -6.0 2.0 0.0                # 4
+    children                                                # 5
+    {
+        Shape                                               # 6
+        {
+            appearance Appearance
+            {
+                material Material       { }
+            }
+            geometry Cylinder
+            {
+                radius              0.3
+                height              5.0
+                top                 FALSE
+            }
+        }
+    }
+}
+```
+</br>
+
+</br>
+
+위의 장면 그래프와 같이 이 코드는 모두 4개의 노드를 묘사하고 있다.
+
+#1과 #2에 정의된 셰이프 노드는 각각 원구와 원기둥을 묘사한다.
+
+#3에서 정의된 변환 노드 내부에 #6의 원기둥 노드를 정의함으로써 장면 그래프의 계층 구조에 의해 그 변환이 원기둥에 적용된다.
+
+</br>
+
+#1은 반지름이 1.2인 원구를, #2는 반지름 0.3, 높이 5.0인 원기둥을 묘사하고 있다. top을 FALSE로 한 것은 윈기둥의 뚜껑을 없애기 위함이다.
+
+#1, #2에 의해 원구와 원기둥은 둘 다 좌표계의 원점에 위치하여 서로 중첩된다.
+
+#3의 Transform 노드는 물체에 가해지는 이동, 회전, 확대의 변환 작업에 사용된다.
+
+</br>
+
+#4는 이동 변환이다. 현재 셰이프 노드 좌표계를 (x, y, z) 축으로 (-6.0, 2.0, 0.0)만큼 이동한 후, #6의 셰이프에 의해 정의된 원기둥을 그린다.
+
+이러한 변환 노드를 상위 노드로 볼 때 #5의 children 필드명은 그 아래 정의된 Shape 노드가 변환이 적용되어야 하는 하위 노드라는 점을 말한다.
+
+이처럼 **상위 노드에서 하위 노드로 내려갈 때에는 children 필드를 명시한 후 원하는 노드명을 명시**할 수 있다.
+
+</br>
+
+VRML에는 **셰이프 노드, 변환 노드 외에도 여러가지 노드들이 제공**된다.
+
+* 터치 센서 노드: 사용자와의 상호 작용을 위해 마우스 상태와 클릭 위치를 추적한다.
+
+* 노멀 노드: 물체면의 법선 벡터를 계산한다.
+
+* 타임 센서 노드: 애니메이션의 시작과 종료 시간을 제어한다.
+
+</br>
+
+이러한 점에서 VRML은 사실상 3D 컴퓨터 그래픽 이론에서 제공하는 거의 모든 기능을 확인해볼 수 있는 API다.
+
+</br>
+
+차세대 VRML로 불리는 **X3D**는 **VRML의 명령을 확장**한 것으로 **XML 내부에 VRML 명령어를 내장한 형태**다.
+
+X3D는 HTML처럼 **태그 사이에 명령을 넣는 형태**다. 태그 자체가 계층 구조를 표시할 수 있기 때문에 **장면의 계층 구조를 더욱 쉽게 묘사**할 수 있다.
+
+예를 들어 XML 내부의 X3D는 다음과 같은 형태를 취한다.
+
+</br>
+
+```
+<X3D>
+    <head>
+        <meta content = "X3D Picture" name = "Author"/>
+    </head>
+    <Scene>
+        <Shape>
+            <Appearance>
+                <Material diffuseColor = ".2 .8 .4"/>
+            </Appearance>
+            <Cylinder radius = "0.3" height = "5.0"/>
+        </Shape>
+    </Scene>
+</X3D>
+```
+</br>
