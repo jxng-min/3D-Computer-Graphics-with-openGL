@@ -15,6 +15,8 @@
 
 </br>
 
+![images_soltrawberry0707_post_a3258938-bcd3-4ab2-979c-b4ad7b5f2cb4_image](https://github.com/user-attachments/assets/c311d291-d6e5-4515-b91a-e3d1ef346bce)
+
 </br>
 
 그래픽 라이브러리로 직접 하드웨어를 제어하는 명령 대신 상위 개념인 **라이브러리 함수를 호출함으로써 손쉽게 응용프로그램을 작성**할 수 있다.
@@ -130,6 +132,8 @@ Material 명령은 물체의 색상이나 재질 등의 속성을 지정하는 �
 
 </br>
 
+![제목 없는 다이어그램 drawio](https://github.com/user-attachments/assets/2131e2c2-624a-4127-b953-f9c5818567fe)
+
 </br>
 
 위 프로그램은 사실상 위의 그림과 같은 계층 구조를 내포하고 있다.
@@ -186,6 +190,10 @@ VRML은 원격 사용자 사이의 상호작용에 따라 화면에 나타나는
 이는 MMD로 작성한 2D 애니메이션을 Shockwave 유틸리티를 이용해 HTML로 변환하는 것과 같다.
 
 복잡한 물체나 애니메이션은 VRML로 코딩하는 것보다 3D Studio Max와 같은 3D 모델링 소프트웨어를 사용하는 것이 유리하다.
+
+</br>
+
+![제목 없는 다이어그램 drawio (1)](https://github.com/user-attachments/assets/5db04d75-6344-4381-b867-058ddb0bbe4f)
 
 </br>
 
@@ -276,6 +284,8 @@ Transform                                                   # 3
 }
 ```
 </br>
+
+![제목 없는 다이어그램 drawio (2)](https://github.com/user-attachments/assets/a6f60581-ca72-4c4a-bc94-73ac234d1823)
 
 </br>
 
