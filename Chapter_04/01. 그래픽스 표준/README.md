@@ -49,6 +49,8 @@ ISO 그래픽 표준에는 그림을 구성하는 기본 요소들에 용어가 
 
 </br>
 
+![화면 캡처 2024-10-29 103629](https://github.com/user-attachments/assets/a048b777-f175-4b9d-b25a-88e2e4c04913)
+
 </br>
 
 또한, 2개의 선을 이었을 때 연결부를 어떤 모습으로 처리하는지도 관건이다.
@@ -56,6 +58,8 @@ ISO 그래픽 표준에는 그림을 구성하는 기본 요소들에 용어가 
 연결부를 둥글게 처리하는 Round Join, 잘라내서 처리하는 Bevel Join, 뾰족하게 처리하는 Miter Join이 있다.
 
 </br>
+
+![unnamed](https://github.com/user-attachments/assets/9c32c6e0-f449-4c58-9769-ac72d112b84b)
 
 </br>
 
