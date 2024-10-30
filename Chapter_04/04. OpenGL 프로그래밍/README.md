@@ -13,6 +13,8 @@
 
 </br>
 
+![제목 없는 다이어그램 drawio](https://github.com/user-attachments/assets/167ff90e-aae8-42c6-9f41-aa0e9a6b11da)
+
 </br>
 
 앞쪽의 **gl은 해당 함수가 GL 라이브러리 함수**임을 나타낸다. 만약 이게 **glu이면 GLU 유틸리티 함수**고, **glut이면 GLUT 툴킷 함수**다.
@@ -40,6 +42,8 @@ OpenGL의 타입명은 C/C++ 타입명 앞에 **GL을 단순히 추가**한다. 
 또, **OpenGL 자체가 C 함수로 구현**되어 있으므로, 어떤 변수를 사용하고자 할 때는 굳이 O**penGL 타입 말고 C/C++ 타입으로 선언하여 사용해도 무방**하다.
 
 </br>
+
+![제목 없는 다이어그램 drawio (1)](https://github.com/user-attachments/assets/b3bf9459-a419-4486-aba3-456fb837b969)
 
 </br>
 
@@ -90,6 +94,8 @@ GL은 함수만으로는 GL 프로그램을 작성할 수 없다. GL은 렌더�
     + 윈도우 운영체제가 실행하는 기능들이다.
 
 </br>
+
+![img](https://github.com/user-attachments/assets/2dd24291-e7f3-4cb3-bcfa-970f7dbc6e2a)
 
 </br>
 
