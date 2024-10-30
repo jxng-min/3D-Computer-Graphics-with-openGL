@@ -255,6 +255,8 @@ drawLine((2, 5), (1, 0));
 
 </br>
 
+![제목 없는 다이어그램 drawio (7)](https://github.com/user-attachments/assets/9fd896f4-aa3b-4056-900e-01ad7e0af6d9)
+
 </br>
 
 OpenGL의 **상태 변수**는 ISO 표준에서 말하는 속성에 해당한다. 또 OpenGL의 **상태 테이블**은 ISO 표준의 시스템 테이블에 해당한다.
