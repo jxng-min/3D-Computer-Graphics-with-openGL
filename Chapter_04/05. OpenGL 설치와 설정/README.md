@@ -30,11 +30,15 @@ FreeGLUT에서는 GLUT을 사용할 때 반드시 glutInit()을 호출해서 GLU
 
 </br>
 
+![이미지_478](https://github.com/user-attachments/assets/2cad955b-a358-4996-a667-4d8d4c6f7efe)
+
 </br>
 
 검색 입력란에 freeglut을 검색하면 freeglut이 나오게 된다.
 
 </br>
+
+![화면 캡처 2024-10-31 112414](https://github.com/user-attachments/assets/d8bbb749-51b0-4cc1-b43b-8f5a4c57205b)
 
 </br>
 
@@ -75,6 +79,8 @@ int main(int argc, char* argv[])
 }
 ```
 </br>
+
+![화면 캡처 2024-10-31 110527](https://github.com/user-attachments/assets/b2b83abc-4348-4278-8a41-2add47b0f3da)
 
 </br>
 
@@ -127,5 +133,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 }
 ```
 </br>
+
+![화면 캡처 2024-10-31 111552](https://github.com/user-attachments/assets/83890d6e-0a64-4ac2-91b5-b620503892f3)
 
 </br>
