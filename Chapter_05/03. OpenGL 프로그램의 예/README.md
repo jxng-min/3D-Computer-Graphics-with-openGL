@@ -12,14 +12,14 @@
 </br>
 
 ```C
-#include <GL/glut.h>										// 1
+#include <GL/glut.h>											// 1
 #include <GL/GL.h>											// 2
 #include <GL/GLU.h>											// 3
 
 void MyDisplay()											// 4
 {
-	glClear(GL_COLOR_BUFFER_BIT);							// 5
-	glBegin(GL_POLYGON);									// 6
+	glClear(GL_COLOR_BUFFER_BIT);									// 5
+	glBegin(GL_POLYGON);										// 6
 
 	glVertex3f(-0.5, -0.5, 0.0);
 	glVertex3f(0.5, -0.5, 0.0);
@@ -27,19 +27,23 @@ void MyDisplay()											// 4
 	glVertex3f(-0.5, 0.5, 0.0);
 
 	glEnd();
-	glFlush();												// 7
+	glFlush();											// 7
 }
 
 int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
-	glutCreateWindow("OpenGL Drawing Example");				// 8
-	glutDisplayFunc(MyDisplay);								// 9
+	glutCreateWindow("OpenGL Drawing Example");							// 8
+	glutDisplayFunc(MyDisplay);									// 9
 	glutMainLoop();											// 10
 
 	return 0;
 }
 ```
+</br>
+
+![화면 캡처 2024-11-03 130648](https://github.com/user-attachments/assets/4765fea3-51b6-4b38-ae0e-2a26feee33f9)
+
 </br>
 
 위의 코드는 매우 간단해 보이지만 GL 프로그램의 필수 요소를 모두 갖추고 있다.
@@ -109,6 +113,8 @@ GL 프로그램은 **윈도우 기능 및 I/O 제어**에 있어서 **GLUT 라�
 
 </br>
 
+![제목 없는 다이어그램 drawio](https://github.com/user-attachments/assets/d82f2991-4f20-4e73-97f9-b663bc249dae)
+
 </br>
 
 프로그래머가 필요한 콜백 함수를 등록하고, 해당 콜백 함수에 원하는 내용을 채워넣기만 하면, 호출은 GLUT이 처리한다.
@@ -118,6 +124,8 @@ GL 프로그램은 **윈도우 기능 및 I/O 제어**에 있어서 **GLUT 라�
 이후, GLUT은 **드라이버로부터 받은 이벤트 레코드를 참고해 이벤트 타입을 판단**하고 테이블을 검색하여 그에 맞는 **콜백 함수를 호출**한다.
 
 </br>
+
+![제목 없는 다이어그램 drawio (1)](https://github.com/user-attachments/assets/81ce2178-fd9d-4ca5-99fe-fea6c7b866fa)
 
 </br>
 
