@@ -13,6 +13,8 @@ GL 프로그램이 실행되면서 입력 기본 요소인 정점에 일련의 �
 
 </br>
 
+![제목 없는 다이어그램 drawio (2)](https://github.com/user-attachments/assets/4f6d1383-ea68-42a3-9493-e72332a55150)
+
 </br>
 
 |좌표계|설명|
@@ -35,6 +37,8 @@ GL 프로그램이 실행되면서 입력 기본 요소인 정점에 일련의 �
 이 변환은 **절단 좌표계에서 정규 좌표계로 넘어오면서** 이루어진다. 여기서 **정규 좌표(NDC)**는 **1을 기준으로 하는 2D 좌표**다.
 
 </br>
+
+![제목 없는 다이어그램 drawio (3)](https://github.com/user-attachments/assets/937f4001-0f0c-4f90-b76b-c969b43c010c)
 
 </br>
 
@@ -92,6 +96,10 @@ GL 프로그램이 실행되면서 입력 기본 요소인 정점에 일련의 �
 
 </br>
 
+![그림_2](https://github.com/user-attachments/assets/9abb864d-df63-45a0-b5de-d76610518a7e)
+
+</br>
+
 **경우에 따라서는 주어진 윈도우의 일부만 사용**하기도 한다. **뷰 포트**는 **윈도우 내부에 설정한 작은 창**을 말한다.
 
 위의 그림은 그래픽 소프트웨어 3D MAX의 화면 인터페이스로, 좌측 윈도우를 4개의 뷰 포트로 분할하여 서로 다른 방향에서 본 물체 모습을 보여준다.
@@ -135,11 +143,11 @@ GL 프로그램이 실행되면서 입력 기본 요소인 정점에 일련의 �
 
 void MyDisplay()
 {
-	glClear(GL_COLOR_BUFFER_BIT);									// #1: GL 상태 변수 설정
-    glViewport(0, 0, 300, 300);
-    glColor3f(1.0, 1.0, 1.0);
+	glClear(GL_COLOR_BUFFER_BIT);				// #1: GL 상태 변수 설정
+    	glViewport(0, 0, 300, 300);
+    	glColor3f(1.0, 1.0, 1.0);
 
-	glBegin(GL_POLYGON);										// #2: 입력 기본 요소 정의
+	glBegin(GL_POLYGON);					// #2: 입력 기본 요소 정의
 	glVertex3f(-0.5, -0.5, 0.0);
 	glVertex3f(0.5, -0.5, 0.0);
 	glVertex3f(0.5, 0.5, 0.0);
@@ -150,15 +158,15 @@ void MyDisplay()
 
 int main(int argc, char* argv[])
 {
-	glutInit(&argc, argv);                                      // #3: GLUT 윈도우 함수
-    glutInitDisplayMode(GLUT_RGB);
-    glutInitWindowSize(300, 300);
-    glutInitWindowPosition(0, 0);
+	glutInit(&argc, argv);					// #3: GLUT 윈도우 함수
+    	glutInitDisplayMode(GLUT_RGB);
+    	glutInitWindowSize(300, 300);
+    	glutInitWindowPosition(0, 0);
 	glutCreateWindow("OpenGL Drawing Example");
-    glClearColor(0.0, 0.0, 0.0, 1.0);
-    glMatrixMode(GL_PROJECTION);                                // #4. GL 상태 변수 설정
-    glLoadIdentity();                                           // #5.
-    glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
+    	glClearColor(0.0, 0.0, 0.0, 1.0);
+    	glMatrixMode(GL_PROJECTION);				// #4. GL 상태 변수 설정
+    	glLoadIdentity();					// #5.
+    	glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
 	glutDisplayFunc(MyDisplay);
 	glutMainLoop();
 
@@ -188,6 +196,8 @@ int main(int argc, char* argv[])
 만약 너비가 400이고, 높이가 300인 윈도우를 화면 좌표 (120, 55)에 위치시키면 그 결과는 아래와 같다.
 
 </br>
+
+![제목 없는 다이어그램 drawio (4)](https://github.com/user-attachments/assets/5746153c-af90-449e-b0e0-63543983f4a1)
 
 </br>
 
@@ -222,6 +232,10 @@ int main(int argc, char* argv[])
 여기서 주의할 점은 **GLUT이 사용하는 화면 좌표계와 GL이 사용하는 화면 좌표계가 서로 다르다**는 점이다.
 
 **GLUT은 화면의 좌상단을 원점**으로 하지만, **GL은 윈도우의 좌하단을 원점**으로 한다.
+
+</br>
+
+![제목 없는 다이어그램 drawio (5)](https://github.com/user-attachments/assets/c24c7545-f574-4c84-8ea4-44cd0b2a0496)
 
 </br>
 
